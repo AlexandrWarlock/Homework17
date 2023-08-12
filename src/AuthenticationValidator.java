@@ -11,23 +11,19 @@ public class AuthenticationValidator {
     }
     private static void checkLogin(String login) throws WrongLoginException{
         if (!login.matches(regex.pattern())) {
-            try {
+            {
                 throw new WrongLoginException("Login содержит в себе только латинские буквы," +
                         " цифры и знак подчеркивания" +
                         " и должен быть не более 20 символов");
-            } catch (WrongLoginException e) {
-                throw new RuntimeException(e);
             }
         }
     }
     private static void checkPassword (String password)  throws WrongPasswordException{
         if (!password.matches((regex.pattern()))) {
-            try {
+            {
                 throw new WrongPasswordException("password содержит в себе только латинские буквы," +
                         " цифры и знак подчеркивания" +
                         " и должен быть не более 20 символов");
-            } catch (WrongPasswordException e) {
-                throw new RuntimeException(e);
             }
         }
     }
